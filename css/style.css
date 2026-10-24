@@ -1,0 +1,124 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f1e8;
+    color: #18251f;
+    padding: 5px;
+    margin: 15px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.95em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+figure {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 14px;
+    border: 3px solid #35483c;
+    border-radius: 12px;
+    background-color: #ffffff;
+    color: #18251f;
+    text-align: center;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+figcaption {
+    padding-top: 8px;
+    font-weight: 700;
+}
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #173d2b;
+}
+
+@media screen and (min-width: 772px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    figure {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    figure img {
+        width: 76%;
+        height: auto;
+        align-self: center;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    figure:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    figure {
+        aspect-ratio: auto;
+        border-radius: 0;
+    }
+
+    figure img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 0;
+    }
+
+    figure:nth-child(3n) {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #101713;
+        color: #f5f5ec;
+    }
+
+    figure {
+        background-color: #18251f;
+        color: #fff1a8;
+        border-color: #000000;
+    }
+
+    footer a {
+        color: #fff1a8;
+    }
+}
